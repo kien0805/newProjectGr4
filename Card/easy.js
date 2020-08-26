@@ -171,7 +171,7 @@
                              }
                           }
                      }     
-                 else if (moves > 18){
+                 else if (moves > 19){
                          for (i = 0; i < 3; i++) {
                             if(i >0){
                              stars[i].style.visibility = "collapsed";
