@@ -3,26 +3,25 @@
 const username = document.getElementById('username');
    const saveScoreBtn = document.getElementById('save-Score');
 
-            let totalTime = localStorage.getItem('totalTime');
-             let totalMove = JSON.parse(localStorage.getItem('totalMoves'))
-            var highScores = JSON.parse(localStorage.getItem('scores')) || [];
+            var totalTime = localStorage.getItem('totalTime');
+             var totalMove = JSON.parse(localStorage.getItem('totalMove'))
+            var highScores = JSON.parse(localStorage.getItem('movesAndTime')) || [];
            
-            username.addEventListener("keyup", () => {
+            username.addEventListener('keyup', () => {
                 saveScoreBtn.disabled = !username.value;
             });
         
             let saveScore = (e) => {
                 e.preventDefault();
                 const moveandTimeScore = {
-                    moveScore: totalMove,
-                    timeScore :totalTime,
+                    moveScore: totalMove -1 ,
+                    timeScore :totalTime ,
                     name: username.value,
                 }
                
                 highScores.push(moveandTimeScore);
                 highScores.sort((a, b) => b.moveandTimeScore - a.moveandTimeScore);
             
-                localStorage.setItem('scores', JSON.stringify(highScores));
- 
-                console.log(highScores);
+                localStorage.setItem('moveandTimes', JSON.stringify(highScores));
+
             }; 
