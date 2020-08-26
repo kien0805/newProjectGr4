@@ -138,7 +138,7 @@ function startGame() {
             Array.prototype.filter.call(cards, function (card){
                 card.classList.add('disabled')
             });
-        }d
+        }
 
         // kích hoạt lá bài và vô hiệu hóa các lá bài trùng nhau
         function enable() {
@@ -152,16 +152,15 @@ function startGame() {
         
 
         function moveCounter() {
-           
             moves++;
            counter.innerHTML = moves;
                 // bắt đầu tính thời gian khi bắt đầu chơi;
-                    if( moves == 1){
-                        second = 0;
-                        minute = 0;
-                        hour = 0;
-                        startTimer();
-                    }
+                if(moves == 1){
+                    second = 0;
+                    minute = 0; 
+                    hour = 0;
+                    startTimer();
+                }
                 // Đánh giá qua số lượng nước đi;
                 if(moves > 10 && moves < 15){
                         for (let i = 0; i <3; i++) {
@@ -177,24 +176,23 @@ function startGame() {
                            } 
                      }
                 }
-            };
+            }
         var second = 0, minute = 0 ;hour = 0;
         var timer = document.querySelector(".timer");
         var interval;
-        function startTimer() {
-                interval = setInterval(function(){
-                    timer.innerHTML = minute+"mins " +second+" secs";
-                    second++;
-                        if (second ==60) {
-                            minute++;
-                            second = 0;
-                        }
-                        if (minute==60) {
-                            hour++;
-                            minute=0;
-                        }
-                },1000);
-            
+        function startTimer(){
+            interval = setInterval(function(){
+                timer.innerHTML = minute+"mins "+second+"secs";
+                second++;
+                if(second == 60){
+                    minute++;
+                    second=0;
+                }
+                if(minute == 60){
+                    hour++;
+                    minute = 0;
+                }
+            },1000);
         }
 
 
