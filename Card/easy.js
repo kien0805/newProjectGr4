@@ -167,14 +167,14 @@
                  if(moves > 10 && moves < 18){
                          for (let i = 0; i <3; i++) {
                              if(moves >1){
-                             stars[i].style.visibility = "collapsed";
+                             stars[i].style.visibility = "collapse";
                              }
                           }
                      }     
                  else if (moves > 19){
                          for (i = 0; i < 3; i++) {
                             if(i >0){
-                             stars[i].style.visibility = "collapsed";
+                             stars[i].style.visibility = "collapse";
                             } 
                       }
                  }
@@ -209,8 +209,10 @@
  
  
                      document.getElementById("finalMove").innerHTML = moves;
+                     localStorage.setItem('totalMoves', moves)
                      document.getElementById("starRating").innerHTML = starRating;
                      document.getElementById("totalTime").innerHTML = finalTime;
+                     localStorage.setItem('totalTime',finalTime)
                      
                      closeModal();
              

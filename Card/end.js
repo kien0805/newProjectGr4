@@ -3,8 +3,8 @@
 const username = document.getElementById('username');
    const saveScoreBtn = document.getElementById('save-Score');
 
-            const totalTime = localStorage.getItem('totalTime');
-             const totalMove = localStorage.getItem('totalMoves')
+            let totalTime = localStorage.getItem('totalTime');
+             let totalMove = JSON.parse(localStorage.getItem('totalMoves'))
             var highScores = JSON.parse(localStorage.getItem('scores')) || [];
            
             username.addEventListener("keyup", () => {
@@ -18,7 +18,7 @@ const username = document.getElementById('username');
                     timeScore :totalTime,
                     name: username.value,
                 }
-                highScores = [];
+               
                 highScores.push(moveandTimeScore);
                 highScores.sort((a, b) => b.moveandTimeScore - a.moveandTimeScore);
             
