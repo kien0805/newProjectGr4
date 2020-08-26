@@ -166,7 +166,7 @@
                  // Đánh giá qua số lượng nước đi;
                  if(moves > 10 && moves < 18){
                          for (let i = 0; i <3; i++) {
-                             if(moves >1){
+                             if(i >1){
                              stars[i].style.visibility = "collapse";
                              }
                           }
