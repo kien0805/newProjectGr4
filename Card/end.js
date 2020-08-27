@@ -11,17 +11,17 @@ const username = document.getElementById('username');
                 saveScoreBtn.disabled = !username.value;
             });
         
-            let saveScore = (event) => {
-                event.preventDefault();
-                let moveandTimeScore = {
-                    moveScore: totalMove,
-                    timeScore : totalTime,
+            let saveScore = (e) => {
+                e.preventDefault();
+                const moveandTimeScore = {
+                    moveScore: totalMove ,
+                    timeScore :totalTime ,
                     name: username.value,
                 }
                
                 highScores.push(moveandTimeScore);
                 highScores.sort((a, b) => b.moveandTimeScore - a.moveandTimeScore);
-                highScores.splice(5);
-                localStorage.setItem('moveandTimes', JSON.stringify(highScores));
+            
+                localStorage.setItem('movesAndTime', JSON.stringify(highScores));
 
             }; 

@@ -1,6 +1,6 @@
 
 let highScoresList = document.getElementById("highScoresList");
-let highScores = JSON.parse(localStorage.getItem('moveandTimes')) || [];
+let highScores = JSON.parse(localStorage.getItem('movesAndTime')) || [];
 
 highScoresList.innerHTML = highScores
   .map(highScores => {
