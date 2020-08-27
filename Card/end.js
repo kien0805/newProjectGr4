@@ -14,13 +14,14 @@ const username = document.getElementById('username');
             let saveScore = (e) => {
                 e.preventDefault();
                 const moveandTimeScore = {
-                    moveScore: totalMove -1 ,
-                    timeScore :totalTime[1] ,
+                    moveScore: totalMove,
+                    timeScore : totalTime,
                     name: username.value,
                 }
                
                 highScores.push(moveandTimeScore);
                 highScores.sort((a, b) => b.moveandTimeScore - a.moveandTimeScore);
+                highScores.splice(5);
             
                 localStorage.setItem('moveandTimes', JSON.stringify(highScores));
 
