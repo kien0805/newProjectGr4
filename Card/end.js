@@ -11,9 +11,9 @@ const username = document.getElementById('username');
                 saveScoreBtn.disabled = !username.value;
             });
         
-            let saveScore = (e) => {
-                e.preventDefault();
-                const moveandTimeScore = {
+            let saveScore = (event) => {
+                event.preventDefault();
+                let moveandTimeScore = {
                     moveScore: totalMove,
                     timeScore : totalTime,
                     name: username.value,
@@ -22,7 +22,6 @@ const username = document.getElementById('username');
                 highScores.push(moveandTimeScore);
                 highScores.sort((a, b) => b.moveandTimeScore - a.moveandTimeScore);
                 highScores.splice(5);
-            
                 localStorage.setItem('moveandTimes', JSON.stringify(highScores));
 
             }; 
