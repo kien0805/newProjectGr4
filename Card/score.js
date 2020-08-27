@@ -1,9 +1,9 @@
 
-const highScoresList = document.getElementById("highScoresList");
-const highScores = JSON.parse(localStorage.getItem('moveandTimes')) || [];
+let highScoresList = document.getElementById("highScoresList");
+let highScores = JSON.parse(localStorage.getItem('moveandTimes')) || [];
 
 highScoresList.innerHTML = highScores
-  .map(score => {
+  .map(highScores => {
     return `<li class="high-score"> ${moveandTimeScore.name} - ${moveandTimeScore.moveScore} - ${moveandTimeScore.timeScore}</li>`;
   })
   .join("");
