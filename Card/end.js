@@ -15,7 +15,7 @@ const username = document.getElementById('username');
                 e.preventDefault();
                 const moveandTimeScore = {
                     moveScore: totalMove -1 ,
-                    timeScore :totalTime ,
+                    timeScore :totalTime[1] ,
                     name: username.value,
                 }
                
