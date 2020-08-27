@@ -13,7 +13,7 @@ const username = document.getElementById('username');
         
             let saveScore = (e) => {
                 e.preventDefault();
-                const moveandTimeScore = {
+                var moveandTimeScore = {
                     moveScore: totalMove ,
                     timeScore :totalTime ,
                     name: username.value,
